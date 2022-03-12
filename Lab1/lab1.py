@@ -78,7 +78,6 @@ def picar(n, h, x, y0):
         y_out[1].append(f2(x))
         y_out[2].append(f3(x))
         y_out[3].append(f4(x))
-        #y_out.append([f1(x), f2(x), f3(x), f4(x)])
     return y_out
 
 
@@ -100,8 +99,6 @@ def work():
     print("-" * 107)
     output_step = int(n / 100)  # выводим только 100 значений в таблице
     for i in range(0, n, output_step):
-        #print("|{:^9.5f}|{:^15.8f}|{:^15.8f}|{:^15.8f}|{:^15.8f}|{:^15s}|{:^15s}|".format(x_arr[i], y3[i][0], y3[i][1],
-        #                                                                y3[i][2], y3[i][3], output(y1[i]), output(y2[i])))
         print("|{:^9.5f}|{:^15.8f}|{:^15.8f}|{:^15.8f}|{:^15.8f}|{:^15s}|{:^15s}|".format(x_arr[i], y3[0][i], y3[1][i],
                                                                         y3[2][i], y3[3][i], output(y1[i]), output(y2[i])))
 
@@ -111,7 +108,14 @@ def work():
     y22 = runge(n, h, x, y0)
     y32 = picar(n, -h, x, y0)
 
+    x_arr2.reverse()
     x_arrF = x_arr2+x_arr
+    (y32[0]).reverse()
+    (y32[1]).reverse()
+    (y32[2]).reverse()
+    (y32[3]).reverse()
+    y12.reverse()
+    y22.reverse()
 
     get_graphic(x_arrF, y32[0]+y3[0], "Пикар 1")
     get_graphic(x_arrF, y32[1]+y3[1], "Пикар 2")
