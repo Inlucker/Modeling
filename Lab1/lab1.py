@@ -82,7 +82,7 @@ def picar(n, h, x, y0):
 
 
 def work():
-    h = 10 ** -5  # 10**-5 это хороший шаг для численных методов
+    h = 10 ** -5
 
     x = 0
     y0 = 0
@@ -104,8 +104,8 @@ def work():
 
 
     x_arr2 = [x - h * i for i in range(n)]
-    y12 = euler(n, h, x, y0)
-    y22 = runge(n, h, x, y0)
+    y12 = euler(n, -h, x, y0)
+    y22 = runge(n, -h, x, y0)
     y32 = picar(n, -h, x, y0)
 
     x_arr2.reverse()
