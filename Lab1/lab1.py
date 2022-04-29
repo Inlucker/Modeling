@@ -21,6 +21,7 @@ def output(s):
 
 
 def func(x, u):
+    #return x ** 2 - 2*u
     return x ** 2 + u ** 2
 
 # Рунге-Кутта
@@ -83,6 +84,7 @@ def picar(n, h, x, y0):
 
 def work():
     h = 10 ** -5
+    #h = 0.1
 
     x = 0
     y0 = 0
@@ -98,6 +100,7 @@ def work():
     print("|    x    |   Пикара 1    |   Пикара 2    |   Пикара 3    |    Пикара 4   |    Эйлера     |  Рунге-Кутты  |")
     print("-" * 107)
     output_step = int(n / 100)  # выводим только 100 значений в таблице
+    #output_step = n
     for i in range(0, n, output_step):
         print("|{:^9.5f}|{:^15.8f}|{:^15.8f}|{:^15.8f}|{:^15.8f}|{:^15s}|{:^15s}|".format(x_arr[i], y3[0][i], y3[1][i],
                                                                         y3[2][i], y3[3][i], output(y1[i]), output(y2[i])))
